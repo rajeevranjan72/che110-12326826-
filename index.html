@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Flood</title>
+    
+<link rel="stylesheet" href="che110project.css">
+<style>
+  
+
+body {
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+  display: flex;
+  font-family: "Roboto", sans-serif;
+
+  background-color: rgb(33, 31, 31);
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  min-height: 100px;
+  align-items: center;
+  justify-content: space-between;
+  background-color: transparent;
+  align-self: center;
+}
+
+.navbar li {
+  margin: 0 50px;
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+}
+.navbar li:nth-child(2) {
+  margin-top: -10px;
+  margin-right: 70px;
+}
+.logo img {
+  width: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+}
+
+.buttons {
+  background-color: #e50914;
+  padding: 7px 17px;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  border-radius: 3px;
+}
+
+.main {
+  width: 100%;
+  margin-top: -100px;
+  background-size: cover;
+  align-items: center;
+  overflow-x: hidden;
+  justify-content: center;
+  display: flex;
+  background-position: center;
+  min-height: 710px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url(https://images.pexels.com/photos/8568719/pexels-photo-8568719.jpeg?auto=compress&cs=tinysrgb&w=600);
+}
+
+.area {
+  color: white;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 70px;
+}
+
+.area h1 {
+  font-size: 60px;
+  word-spacing: 15px;
+  line-height: 75px;
+  margin-bottom: 60px;
+  color: white;
+}
+
+.area h5 {
+  margin-top: -30px;
+  font-size: 19px;
+  font-weight: normal;
+  text-align: center;
+}
+
+.search {
+  width: 150%;
+  background-color: none;
+  min-height: 80px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+  margin-top: 10px;
+}
+
+.box {
+  width: 100%;
+  min-height: 65px;
+}
+
+.try {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: #e50914;
+  min-height: 50px;
+  width: 50%;
+  font-size: 30px;
+  text-transform: uppercase;
+}
+
+.area h4 {
+  margin-top: 10px;
+  font-weight: normal;
+}
+.container0 {
+    
+        width: 100%;
+        min-height: 460px;
+        background-color: black;
+        margin-top: 10px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+        text-align: left;
+        background-size: cover;
+
+}
+.container1 {
+  width: 100%;
+  min-height: 460px;
+  background-color: black;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  text-align: left;
+}
+
+.container1 img {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  object-fit: contain;
+  object-position: center;
+  align-self: center;
+
+  max-width: 100%;
+  height: 350px;
+}
+
+.container1 .image {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  align-self: center;
+  object-fit: contain;
+}
+
+.text {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: center;
+  align-content: center;
+}
+.text p {
+  font-size: 1.5rem;
+  margin-top: 5px;
+}
+
+.text h1 {
+  font-size: 3.125rem;
+}
+
+.question {
+  width: 100%;
+  min-height: 950px;
+  background-color: #000;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  text-align: center;
+}
+
+.question h1 {
+  text-align: center;
+  color: white;
+  margin-bottom: 50px;
+  text-align: center;
+  font-size: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.quest {
+  width: 51%;
+  min-height: 75px;
+  background-color: #303030;
+  color: white;
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+  text-align: left;
+  flex-direction: row;
+  margin: 5px 0;
+}
+
+.quest .textbox {
+  display: flex;
+  text-align: left;
+
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  align-self: center;
+  font-size: 25px;
+  margin: 0 30px;
+  word-spacing: 5px;
+  text-align: left;
+}
+
+.quest i {
+  margin: 0 30px;
+  font-size: 40px;
+  color: rgb(255, 255, 255);
+}
+
+.quest:focus {
+  background-color: red;
+}
+
+.search1 {
+  width: 50%;
+  background-color: none;
+  min-height: 80px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+  margin-top: 10px;
+}
+
+.box1 {
+  width: 100%;
+  min-height: 65px;
+}
+
+.try1 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: #e50914;
+  min-height: 70px;
+  width: 70%;
+  color: white;
+  font-size: 30px;
+  margin: 50px 0;
+  text-transform: uppercase;
+}
+
+.question h4 {
+  color: white;
+  margin-top: 20px;
+  padding-bottom: 0px;
+  padding-top: 20px;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 375px;
+  background-color: black;
+  margin-top: 10px;
+  flex-wrap: wrap;
+  align-items:center;
+  justify-content:space-around;
+
+}
+
+.footercon {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  min-height: 50px;
+  background-color: transparent;
+}
+
+.footer .flex1 {
+  color:#999;;
+  justify-content:space-around;
+  align-items:flex-start;
+  display: flex;
+  flex-direction:row;
+  flex-wrap:wrap;
+  width:100%;
+  font-size: 17px;
+  min-height: 30px;
+
+}
+
+.footer .flex1 h5 {
+  align-self:flex-start;
+}
+
+.list1 {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-items: flex-start;
+  align-self: center;
+  justify-content: center;
+  min-height:50px;
+  font-size: 13px;
+  padding: 0px 70px;
+  text-align: left;
+}
+
+.list1 li {
+  font-size: 13px;
+  margin: 7px -10px;
+  list-style-type: none;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-items: center;
+  align-self: flex-start;
+  justify-content: center;
+}
+
+.list1 li a {
+  color: #999;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+li a {
+  font-size: 13px;
+  text-align: center;
+  color: #999;
+}
+
+
+.footerh2 {
+  color:white;
+  display:flex;
+  flex-direction:row;
+  align-items:flex-end;
+  justify-content: flex-end;
+}
+
+.end {
+  width:100%;
+  min-height:50px;
+background-color: black;
+justify-content:space-around;
+align-items:flex-start;
+display: flex;
+flex-direction:row;
+flex-wrap:wrap;
+color:#999;
+margin-top:-60px;
+}
+
+.end h2 {
+  display:flex;
+  flex-direction: row;
+font-size:16px;
+}
+
+@media (min-width: 250px) and (max-width: 980px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+  .container1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    align-self: center;
+  }
+
+  .area h1 {
+    font-size: 40px;
+    line-height:60px;
+  }
+
+  .area h3 {
+    margin-top: 10px;
+  }
+
+  .container1 img {
+    width: 60%;
+  }
+  .navbar {
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    min-height: 250px;
+    margin-bottom: 30px;
+
+  }
+
+
+
+  .search {
+    display: flex;
+    flex-direction: column;
+    margin: 30px;
+    width: 50%;
+    margin: 0 10px;
+  }
+
+  .box {
+    width: 100%;
+    margin-bottom: 20px;
+    margin:30px;
+  }
+
+  .try {
+    width: 200px;
+    margin: 0 10px;
+    font-size:17px;
+    min-height:50px;
+  }
+
+  .search1 {
+    display: flex;
+    flex-direction: column;
+    margin: 30px;
+    width: 50%;
+    margin: 0 10px;
+    margin-bottom: 40px;
+  }
+
+h4 {
+  color:white;
+}
+
+  .box1 {
+    width: 100%;
+    margin-bottom: 20px;
+    margin:30px;
+  }
+
+  .try1 {
+    width: 200px;
+    margin: 0 10px;
+    font-size:17px;
+    min-height:50px;
+  }
+  .text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    text-align: center;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .text h1 {
+    font-size: 2rem;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .text p {
+    font-size: 1.2rem;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .quest .textbox {
+    font-size: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .quest {
+    width: 80%;
+    min-height: 75px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .accordion {
+    margin: 60px auto;
+    width: 100%;
+    max-width: 750px;
+  }
+  .accordionm li{
+    list-style: none;
+    width: 100px;
+    padding: 5px;
+  }
+  .accordion li label {
+    display: flex;
+    align-items: center;
+    padding: 2opx;
+    font-size: 18px;
+    font-weight: 500;
+    background: white;
+    margin-bottom: 2px;
+    cursor: pointer;
+    mask-position: relative;
+    
+  }
+  .form-heading{
+    text-align: center;
+    color: wheat;
+}
+.form{
+    color:wheat;
+    text-align: center;
+    background: transparent;
+}
+.form-heading{
+    padding :5px;
+    border:3px solid wheat;
+    margin-left:400px;
+    margin-right:400px;
+    border-radius: 30px;
+}
+</style>
+    
+  </head>
+  <body>
+    
+
+        </div>
+      </div>
+
+    <div class="navbar">
+<li class="logo"><img src="https://cdn-icons-png.flaticon.com/128/2272/2272231.png"></li>
+<li class="buttons">HOME</a>
+
+    </div>
+    
+    <div class="main">
+<div class="area">
+  <h1>INTRODUCTION OF FLOOD </h1>
+  <h5>Floods are natural disasters that occur when an excessive amount of water overflows onto normally dry land, often<br>
+     causing significant damage to property, infrastructure, and the environment. These events are primarily driven by various<br>
+      factors, including heavy rainfall, snowmelt, ice jams, storm surges, or dam failures. Floods can range in scale from loc-<br>
+      alized flash floods that develop rapidly to large-scale riverine floods that may take days or weeks to crest.<br>
+
+    The impact of floods can be devastating, leading to loss of life, destruction of homes, disruption of communities, and ec-<br>
+    onomic hardship. They are a global phenomenon and can occur in both urban and rural areas. Floods are a recurring and wide-<br>
+    spread natural hazard that pose significant challenges for emergency response, disaster management, and long-term resilience.<br>
+    
+    This introduction provides a brief overview of what floods are and their general characteristics. Further exploration into<br> 
+    the causes, consequences, and mitigation strategies associated with floods is crucial for understanding and effectively add-<br>
+    ressing the challenges posed by these natural disasters.<br>
+    </h5>
+
+</div>
+</div>
+
+
+    </div>
+    
+          
+      </div>
+   
+   
+    
+    
+    <div class="container1">
+        <div class="text">
+          <h1>TYPES OF FLOOD
+            </h1>
+            <ul>
+                <li>Fluvial Flood</li><br>
+                <li>Flash flood</li><br>
+                <li>Man-made Flood</li><br>
+                <li>Coastal Flood</li><br>
+                <li>Urban Flood</li><br>
+                <li>Pluvail Flood</li><br>
+            </ul>
+           
+        </div>
+        <div class="image">
+  <img src="https://t3.ftcdn.net/jpg/04/22/34/00/360_F_422340031_IOs7EhjrHVFEVfnkfheWYgU1adbziftr.jpg">
+        </div>
+      </div>
+      <div class="container1">
+          
+          <div class="image">
+    <img src="https://image3.slideserve.com/5682889/slide3-l.jpg">
+          </div>
+          <div class="text">
+              <h1>CAUSES OF FLOOD
+                </h1>
+                <li>Land Draiage</li><br>
+                <li>Deforestation</li><br>
+                <li>River Confluences </li><br>
+                <li>Extreme Weather</li><br>
+                <li>many more....</li><br>
+                
+                
+            </div>
+            
+        </div>
+        <div class="container1">
+            
+            <div class="text">
+              <h1>PRECAUTIONS</h1>
+                <UL>
+                    <li>Evacute low lying areas if advised by authorities</li><br>
+                    <li>Boil water before drinking or use chlorinated water</li><br>
+                    <li>Disconnect and place electrical appliancesoff ground level</li><br>
+                    <li>Avoid food that may have come in contact with floodwater</li><br>
+                    <li>Avoid entering floodwaters or driving through flooded areas</li><br>
+                    <li>Keep an eye for gas leaks</li><br>
+                    <li>Avoid smoking or using candles,lanterns, or open flames</li><br>
+                    <li>Be alert to any drain holes or flood cahnnels,report them immediatlely <br>to the authorities to avoid accidents</li>
+
+                </UL>
+            </div>
+            <div class="image">
+                <img src="https://www.who.int/images/default-source/searo---images/act-and-amplify/safety-during-monsoons-and-floods/2_flood_precautions-during-floods.jpeg?sfvrsn=ebebb514_4">
+                      </div>
+            
+          
+            
+            </div>
+          
+          </div>
+          <div class="container1">
+            <div class="image">
+                <img src="https://th.bing.com/th/id/OIP.1elD5Xcexi5N87PwWlv3wAAAAA?pid=ImgDet&w=200&h=208&c=7&dpr=1.3">
+                      </div>
+          
+          
+            <div class="text">
+                <h1>WARNINGS!</h1>
+                  <ul>
+                    <li> Move to higher ground</li><br>
+                    <li>Follow local news for updates</li><br>
+                    <li>Avoid flooded areas</li>
+                  </ul>
+                
+              
+            </div>
+          </div>
+        </div>
+        <div class="question">
+            <div class="image">
+                <img src="https://th.bing.com/th?id=OSK.HERODC782SRtlvJe65s2WdZAxjvJkrjQG7sMwu8VtAQ0WJY&w=472&h=280&c=1&rs=2&o=6&dpr=1.3&pid=SANGAM">
+                      </div>
+            <h1>Frequently Asked Questions
+              </h1>
+              <div class="quest">
+                <div class="textbox">What is flood?</div>
+                <i class="las la-plus"></i>
+              </div>
+              <div class="quest">
+                  <div class="textbox">What should i do before flood?</div>
+                  <i class="las la-plus"></i>
+                </div>             
+                <div class="quest">
+                    <div class="textbox">What should i do after a flood?</div>
+                    <i class="las la-plus"></i>
+                  </div>                 <div class="quest">
+                    <div class="textbox">What should i do when a flood threatens?</div>
+                    <i class="las la-plus"></i>
+                  </div>               
+                  <div class="quest">
+                      <div class="textbox">Where do i get flood insurance</div>
+                      <i class="las la-plus"></i>
+                    </div>
+                                  
+                      </div>    
+                    </div>
+                </div>
+                <div class="container1">
+          
+                    <div class="image">
+              <img src="https://bharatiyavishwa.com/wp-content/uploads/2020/07/raju-shyam-ruunning-after-munnabhai.jpg">
+                    </div>
+                    <div class="text">
+                        <h1>IF Nothings Worksout<br>
+                            RUN! RUN!
+                          </h1>
+                         
+                          
+                          
+                      </div>
+          
+                
+            </div>
+            
+                    <div class="footer">
+
+
+                        <div class="footercon">
+                          <div class="flex1">
+                                                    <h5>Questions? Call 9525859545
+                            </h5>
+                            <h5>Email: rajeev.123268@lpu.in
+    </h5>
+    <h5>Instagram: theillogicalraj</h5>
+                          </div>
+                          
+               <ul class="list1">
+                 
+                        
+                        
+                                 
+                    </div>
+
+                  </div>
+                  <div class="end">
+<h2>
+@created by: Rajeev, Ankureet, Ajay
+</h2> 
+<h2>
+  </h2>                    </div>
+        
+      
+        
+  </body>
+</html>
